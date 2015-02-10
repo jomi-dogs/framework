@@ -17,5 +17,11 @@
   },
   "bin": [
     "jomi"
-  ]
+  ],
+  "require-dev": {
+    "phpunit/phpunit":"4.4.*",
+    "phpunit/dbunit":"*",
+    "phpunit/php-invoker":"*",
+    "phpunit/phpunit-selenium":"*"
+  }
 }
