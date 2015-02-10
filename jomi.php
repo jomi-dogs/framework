@@ -8,8 +8,8 @@
 global $argv;
 $documentRoot = dirname(__DIR__);
 require_once $documentRoot.'/vendor/autoload.php';
-use framework\Config;
-use framework\ConsoleApplication;
+use jf\Config;
+use jf\ConsoleApplication;
 
 $_config = array_merge_recursive(
     require $documentRoot . '/config/cli.php',

@@ -9,9 +9,9 @@
 namespace jf\traits;
 
 
-use framework\Core;
-use framework\Exception;
-use framework\helpers\DbHelper;
+use jf\Core;
+use jf\Exception;
+use jf\helpers\DbHelper;
 
 trait DbTrait {
 

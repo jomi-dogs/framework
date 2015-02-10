@@ -6,7 +6,7 @@
  * Time: 11:34 PM
  */
 
-namespace framework;
+namespace jf;
 
 
 class Exception extends \Exception{

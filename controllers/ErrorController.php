@@ -9,15 +9,15 @@
 namespace jf\controllers;
 
 
-use framework\Controller;
-use framework\Core;
-use framework\View;
+use jf\Controller;
+use jf\Core;
+use jf\View;
 
 class ErrorController extends Controller {
 
     public function actionException(\Exception $e)
     {
-        $file = Core::$baseDir . '/framework/views/error/exception.php';
+        $file = Core::$jfDir . '/views/error/exception.php';
         return View::getInstance()->render($file,array('e' => $e));
     }
 

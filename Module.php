@@ -6,7 +6,7 @@
  * Time: 1:40 PM
  */
 
-namespace framework;
+namespace jf;
 
 
 abstract class Module {

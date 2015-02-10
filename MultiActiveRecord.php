@@ -6,10 +6,10 @@
  * Time: 1:38 AM
  */
 
-namespace framework;
+namespace jf;
 
 
-use framework\interfaces\IActiveRecord;
+use jf\interfaces\IActiveRecord;
 
 class MultiActiveRecord implements IActiveRecord{
 

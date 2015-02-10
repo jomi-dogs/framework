@@ -9,11 +9,11 @@
 namespace jf\base;
 
 
-use framework\Controller;
-use framework\Core;
-use framework\Exception;
-use framework\interfaces\IMigrate;
-use framework\Migration;
+use jf\Controller;
+use jf\Core;
+use jf\Exception;
+use jf\interfaces\IMigrate;
+use jf\Migration;
 
 abstract class BaseMigrate extends Controller implements IMigrate{
 
@@ -67,7 +67,7 @@ abstract class BaseMigrate extends Controller implements IMigrate{
     public function actionCreate($name)
     {
         $view = $this->getView();
-        $file = Core::$frameworkDir.DIRECTORY_SEPARATOR.'templates/new_migration.php';
+        $file = Core::$jfDir.DIRECTORY_SEPARATOR.'templates/new_migration.php';
         $className = 'migration_'.time().'_'.$name;
         $content = $view->render($file,array('name' => $className,));
         $fp = fopen(Core::$baseDir.DIRECTORY_SEPARATOR.'app/migrations/'.$className.'.php',"w");

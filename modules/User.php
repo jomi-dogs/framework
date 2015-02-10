@@ -11,7 +11,7 @@ namespace jf\modules;
 
 use app\models\Auth;
 use app\models\Session;
-use framework\Module;
+use jf\Module;
 
 class User extends Module{
 

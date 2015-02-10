@@ -8,7 +8,7 @@
 
 echo '<?php'.PHP_EOL;?>
 
-use framework\Migration;
+use jf\Migration;
 
 class <?php echo $name ?> extends Migration
 {

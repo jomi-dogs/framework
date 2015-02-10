@@ -6,10 +6,10 @@
  * Time: 11:23 PM
  */
 
-namespace framework;
+namespace jf;
 
 
-use framework\controllers\ErrorController;
+use jf\controllers\ErrorController;
 
 class ConsoleApplication extends Application{
 
@@ -23,7 +23,7 @@ class ConsoleApplication extends Application{
     {
         return array(
             '\\app\\commands\\',
-            '\\framework\\commands\\'
+            '\\jf\\commands\\'
         );
     }
 

@@ -6,7 +6,7 @@
  * Time: 5:03 PM
  */
 
-namespace framework;
+namespace jf;
 
 
 class Asset {

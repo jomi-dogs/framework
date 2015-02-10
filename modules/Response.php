@@ -8,12 +8,12 @@
 
 namespace jf\modules;
 
-use framework\Module;
-use framework\View;
+use jf\Module;
+use jf\View;
 
 /**
  * Class Response
- * @package framework\modules
+ * @package jf\modules
  */
 class Response extends Module{
 

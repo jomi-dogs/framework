@@ -6,7 +6,7 @@
  * Time: 8:59 PM
  */
 
-namespace framework;
+namespace jf;
 
 
 class Config {

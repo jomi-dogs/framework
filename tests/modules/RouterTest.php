@@ -9,9 +9,9 @@
 namespace jf\tests\modules;
 
 
-use framework\Core;
-use framework\Exception;
-use framework\modules\Router;
+use jf\Core;
+use jf\Exception;
+use jf\modules\Router;
 
 class RouterTest extends \PHPUnit_Framework_TestCase {
 

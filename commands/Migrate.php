@@ -9,11 +9,11 @@
 namespace jf\commands;
 
 
-use framework\base\BaseMigrate;
-use framework\Core;
-use framework\Exception;
-use framework\Migration;
-use framework\traits\DbTrait;
+use jf\base\BaseMigrate;
+use jf\Core;
+use jf\Exception;
+use jf\Migration;
+use jf\traits\DbTrait;
 
 class Migrate extends BaseMigrate
 {

@@ -6,11 +6,11 @@
  * Time: 11:09 PM
  */
 
-namespace framework;
+namespace jf;
 
 /**
  * Class View
- * @package framework
+ * @package jf
  */
 class View {
 

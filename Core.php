@@ -5,13 +5,13 @@
  * Date: 1/23/15
  * Time: 8:53 PM
  */
-namespace framework;
+namespace jf;
 
 define('BASE_DIR',dirname(__DIR__));
 define('FRAMEWORK_DIR',__DIR__);
 /**
  * Class Core
- * @package framework
+ * @package jf
  */
 class Core {
     const EXCEPTION_ERROR_CODE = 500;
@@ -25,7 +25,7 @@ class Core {
     public static $config;
 
     public static $baseDir = BASE_DIR;
-    public static $frameworkDir = FRAMEWORK_DIR;
+    public static $jfDir = FRAMEWORK_DIR;
     /**
      * @param $name
      *

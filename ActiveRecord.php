@@ -6,11 +6,11 @@
  * Time: 11:08 PM
  */
 
-namespace framework;
+namespace jf;
 
 
-use framework\helpers\DbHelper;
-use framework\interfaces\IActiveRecord;
+use jf\helpers\DbHelper;
+use jf\interfaces\IActiveRecord;
 
 abstract class ActiveRecord implements IActiveRecord{
     const EXCEPTION_NOT_VALID_ROW = 2000;

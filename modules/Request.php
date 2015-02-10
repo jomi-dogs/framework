@@ -9,9 +9,9 @@
 namespace jf\modules;
 
 
-use framework\Core;
-use framework\Exception;
-use framework\Module;
+use jf\Core;
+use jf\Exception;
+use jf\Module;
 
 class Request extends Module{
 

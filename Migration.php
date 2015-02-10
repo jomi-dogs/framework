@@ -6,11 +6,11 @@
  * Time: 11:10 PM
  */
 
-namespace framework;
+namespace jf;
 
 
-use framework\modules\Db;
-use framework\traits\DbTrait;
+use jf\modules\Db;
+use jf\traits\DbTrait;
 
 abstract class Migration {
     use DbTrait;

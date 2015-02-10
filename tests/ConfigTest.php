@@ -9,9 +9,9 @@
 namespace jf\tests;
 
 
-use framework\Config;
-use framework\Core;
-use framework\modules\Router;
+use jf\Config;
+use jf\Core;
+use jf\modules\Router;
 
 class ConfigTest extends \PHPUnit_Framework_TestCase {
 

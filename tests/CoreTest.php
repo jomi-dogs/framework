@@ -9,8 +9,8 @@
 namespace jf\tests;
 
 
-use framework\Core;
-use framework\Exception;
+use jf\Core;
+use jf\Exception;
 
 class CoreTest extends \PHPUnit_Framework_TestCase {
 
@@ -31,7 +31,7 @@ class CoreTest extends \PHPUnit_Framework_TestCase {
     {
         try{
             $router = Core::getModule('router');
-            $this->assertInstanceOf('framework\modules\Router',$router,"Fail instance check.");
+            $this->assertInstanceOf('jf\modules\Router',$router,"Fail instance check.");
         } catch (Exception $e) {
             $this->fail("There were the Exception:".$e->getMessage());
         }

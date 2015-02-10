@@ -9,8 +9,8 @@
 namespace jf\helpers;
 
 
-use framework\Core;
-use framework\Exception;
+use jf\Core;
+use jf\Exception;
 
 abstract class DbHelper {
 

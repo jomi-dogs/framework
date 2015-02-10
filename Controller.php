@@ -6,7 +6,7 @@
  * Time: 11:08 PM
  */
 
-namespace framework;
+namespace jf;
 
 
 class Controller {

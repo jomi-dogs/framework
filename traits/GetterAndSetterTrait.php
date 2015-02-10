@@ -9,8 +9,8 @@
 namespace jf\traits;
 
 
-use framework\Core;
-use framework\Exception;
+use jf\Core;
+use jf\Exception;
 
 trait GetterAndSetterTrait {
 

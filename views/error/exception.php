@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \framework\View $this
+ * @var \jf\View $this
  * @var \Exception $e
  */
 ?>

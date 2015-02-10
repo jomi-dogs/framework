@@ -6,17 +6,17 @@
  * Time: 8:56 PM
  */
 
-namespace framework;
-use framework\controllers\ErrorController;
-use framework\modules\Db;
-use framework\modules\Request;
-use framework\modules\Response;
-use framework\modules\Router;
-use framework\modules\User;
+namespace jf;
+use jf\controllers\ErrorController;
+use jf\modules\Db;
+use jf\modules\Request;
+use jf\modules\Response;
+use jf\modules\Router;
+use jf\modules\User;
 
 /**
  * Class Application
- * @package framework
+ * @package jf
  * @property array $params
  * @property Router $router
  * @property Response $response
@@ -85,7 +85,7 @@ class Application {
     {
         return array(
             '\\app\\controllers\\',
-            '\\framework\\controllers\\'
+            '\\jf\\controllers\\'
         );
     }
 
