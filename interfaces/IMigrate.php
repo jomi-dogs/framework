@@ -6,7 +6,7 @@
  * Time: 5:21 PM
  */
 
-namespace framework\interfaces;
+namespace jf\interfaces;
 
 
 interface IMigrate extends IController{

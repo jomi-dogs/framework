@@ -6,7 +6,7 @@
  * Time: 1:34 AM
  */
 
-namespace framework\interfaces;
+namespace jf\interfaces;
 
 
 interface IActiveRecord {

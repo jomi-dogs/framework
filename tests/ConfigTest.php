@@ -6,7 +6,7 @@
  * Time: 12:58 AM
  */
 
-namespace framework\tests;
+namespace jf\tests;
 
 
 use framework\Config;

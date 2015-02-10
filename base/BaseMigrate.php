@@ -6,7 +6,7 @@
  * Time: 5:13 PM
  */
 
-namespace framework\base;
+namespace jf\base;
 
 
 use framework\Controller;

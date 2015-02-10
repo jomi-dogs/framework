@@ -6,7 +6,7 @@
  * Time: 2:32 PM
  */
 
-namespace framework\modules;
+namespace jf\modules;
 use framework\Core;
 use framework\Exception;
 use framework\Module;

@@ -6,7 +6,7 @@
  * Time: 1:34 AM
  */
 
-namespace framework\traits;
+namespace jf\traits;
 
 
 use framework\Core;

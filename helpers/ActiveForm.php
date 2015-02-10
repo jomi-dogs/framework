@@ -6,7 +6,7 @@
  * Time: 5:47 PM
  */
 
-namespace framework\helpers;
+namespace jf\helpers;
 
 
 class ActiveForm {

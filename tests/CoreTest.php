@@ -6,7 +6,7 @@
  * Time: 12:28 AM
  */
 
-namespace framework\tests;
+namespace jf\tests;
 
 
 use framework\Core;

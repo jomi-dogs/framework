@@ -6,7 +6,7 @@
  * Time: 12:26 AM
  */
 
-namespace framework\helpers;
+namespace jf\helpers;
 
 
 abstract class UriHelper {

@@ -6,7 +6,7 @@
  * Time: 1:16 AM
  */
 
-namespace framework\helpers;
+namespace jf\helpers;
 
 
 use framework\Core;

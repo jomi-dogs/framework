@@ -6,7 +6,7 @@
  * Time: 5:22 PM
  */
 
-namespace framework\interfaces;
+namespace jf\interfaces;
 
 
 interface IController {

@@ -6,7 +6,7 @@
  * Time: 12:10 AM
  */
 
-namespace framework\modules;
+namespace jf\modules;
 
 
 use app\models\Auth;

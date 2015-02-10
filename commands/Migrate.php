@@ -6,7 +6,7 @@
  * Time: 11:10 PM
  */
 
-namespace framework\commands;
+namespace jf\commands;
 
 
 use framework\base\BaseMigrate;

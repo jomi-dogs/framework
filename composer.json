@@ -13,7 +13,7 @@
     }
   ],
   "autoload": {
-    "psr-4": {"jomi\\": ""}
+    "psr-4": {"jf\\": ""}
   },
   "bin": [
     "jomi"

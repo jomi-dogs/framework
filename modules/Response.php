@@ -6,7 +6,7 @@
  * Time: 4:07 PM
  */
 
-namespace framework\modules;
+namespace jf\modules;
 
 use framework\Module;
 use framework\View;
