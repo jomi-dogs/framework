@@ -1,0 +1,21 @@
+{
+  "name": "jomi/framework",
+  "description": "This is MVC Framework dedicated to solve basic tasks in complex PHP projects",
+  "keywords": [
+    "jomi",
+    "framework"
+  ],
+  "license": "GPL2",
+  "authors": [
+    {
+      "name": "Maksim Dudkin",
+      "email": "lugamax@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"jomi\\": ""}
+  },
+  "bin": [
+    "jomi"
+  ]
+}
