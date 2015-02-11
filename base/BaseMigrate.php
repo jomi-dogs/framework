@@ -23,7 +23,7 @@ abstract class BaseMigrate extends Controller implements IMigrate{
 
     public function beforeAction()
     {
-        $this->migrationPath = Core::$appDir.'/app/migrations';
+        $this->migrationPath = Core::$appDir.'/migrations';
         $this->init();
     }
 
@@ -70,7 +70,7 @@ abstract class BaseMigrate extends Controller implements IMigrate{
         $file = Core::$jfDir.DIRECTORY_SEPARATOR.'templates/new_migration.php';
         $className = 'migration_'.time().'_'.$name;
         $content = $view->render($file,array('name' => $className,));
-        $fp = fopen(Core::$appDir.DIRECTORY_SEPARATOR.'app/migrations/'.$className.'.php',"w");
+        $fp = fopen(Core::$appDir.'/migrations/'.$className.'.php',"w");
         fwrite($fp,$content);
         fclose($fp);
     }

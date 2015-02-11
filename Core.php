@@ -6,8 +6,8 @@
  * Time: 8:53 PM
  */
 namespace jf;
-
-define('APPLICATION_DIR',dirname(__DIR__));
+if(!defined('APPLICATION_DIR'))
+    define('APPLICATION_DIR',dirname(__DIR__));
 define('JF_DIR',__DIR__);
 /**
  * Class Core
