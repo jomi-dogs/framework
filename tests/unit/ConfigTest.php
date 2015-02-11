@@ -6,7 +6,7 @@
  * Time: 12:58 AM
  */
 
-namespace jf\tests;
+namespace jf\tests\unit;
 
 
 use jf\Config;

@@ -6,7 +6,7 @@
  * Time: 3:07 PM
  */
 
-namespace jf\tests;
+namespace jf\tests\unit;
 
 
 class ApplicationTest extends \PHPUnit_Framework_TestCase {

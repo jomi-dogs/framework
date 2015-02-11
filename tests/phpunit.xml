@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false">
+
+    <selenium>
+    <!--<browser name="Internet Explorer" browser="*iexplore" />-->
+    <!--<browser name="Firefox" browser="*firefox" />-->
+    <browser name="Firefox on Linux"
+    browser="*firefox /usr/lib/firefox/firefox"
+    host="10.0.2.2"
+    port="4444"
+    timeout="3000" />
+    </selenium>
+
+    <php>
+        <!--<env name="TEST_BASE_URL" value="http://users.local/index-test.php" />-->
+    </php>
+
+    <testsuites>
+        <testsuite name="framework">
+            <directory>./unit/</directory>
+        </testsuite>
+    </testsuites>
+
+</phpunit>
