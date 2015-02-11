@@ -8,12 +8,12 @@
 
 namespace jf\modules;
 
-
-use app\models\Auth;
-use app\models\Session;
+use jf\Core;
+use jf\interfaces\IUserEntity;
 use jf\Module;
 
-class User extends Module{
+class User extends Module
+{
 
     /**
      * @return static
@@ -24,13 +24,12 @@ class User extends Module{
     }
 
     /**
-     * @param Auth $auth
+     * @param IUserEntity $auth
      */
-    public function login(Auth $auth)
+    public function login(IUserEntity $auth)
     {
-        $session = new Session();
-        $session->user_id = $auth->id;
-        $session->login = $auth->login;
+        Core::$app->session->user_id = $auth->getId();
+        Core::$app->session->login = $auth->getLogin();
     }
 
     public function logout()

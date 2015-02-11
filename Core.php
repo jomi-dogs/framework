@@ -7,8 +7,8 @@
  */
 namespace jf;
 
-define('BASE_DIR',dirname(__DIR__));
-define('FRAMEWORK_DIR',__DIR__);
+define('APPLICATION_DIR',dirname(__DIR__));
+define('JF_DIR',__DIR__);
 /**
  * Class Core
  * @package jf
@@ -24,8 +24,8 @@ class Core {
     /** @var  Config */
     public static $config;
 
-    public static $baseDir = BASE_DIR;
-    public static $jfDir = FRAMEWORK_DIR;
+    public static $appDir = APPLICATION_DIR;
+    public static $jfDir = JF_DIR;
     /**
      * @param $name
      *

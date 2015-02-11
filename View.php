@@ -73,7 +73,7 @@ class View {
     {
         if(!$this->layout)
             return $content;
-        $layout = Core::$baseDir.'/app/views/layouts/'.trim($this->layout,"\\/").'.php';
+        $layout = Core::$appDir.'/app/views/layouts/'.trim($this->layout,"\\/").'.php';
         if(!file_exists($layout))
             throw new Exception("Layout file $layout does not exists",Core::EXCEPTION_ERROR_CODE);
         return $this->render($layout, array('content' => $content));

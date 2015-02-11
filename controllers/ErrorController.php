@@ -33,5 +33,6 @@ class ErrorController extends Controller {
         print_r($array);
 //        $backtrace = debug_backtrace();
 //        return View::getInstance()->render($file,array('e' => $e));
+        return true;
     }
 }

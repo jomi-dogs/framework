@@ -12,6 +12,7 @@ use jf\modules\Db;
 use jf\modules\Request;
 use jf\modules\Response;
 use jf\modules\Router;
+use jf\modules\Session;
 use jf\modules\User;
 
 /**
@@ -23,6 +24,7 @@ use jf\modules\User;
  * @property Request $request
  * @property Db $db
  * @property User $user
+ * @property Session $session
  */
 class Application {
 
@@ -84,8 +86,8 @@ class Application {
     protected function getControllerNamespaces()
     {
         return array(
-            '\\app\\controllers\\',
-            '\\jf\\controllers\\'
+            $this->config->getControllerNamespace(),
+            '\\jf\\controllers\\',
         );
     }
 

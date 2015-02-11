@@ -19,14 +19,6 @@ class ConsoleApplication extends Application{
         $this->type = 'console';
     }
 
-    protected function getControllerNamespaces()
-    {
-        return array(
-            '\\app\\commands\\',
-            '\\jf\\commands\\'
-        );
-    }
-
     protected function getControllerSuffixes()
     {
         return array(

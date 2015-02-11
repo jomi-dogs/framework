@@ -7,7 +7,7 @@
  */
 
 $_SERVER['REQUEST_URI'] = '/test/test/1';
-
+define('APPLICATION_DIR',dirname(__DIR__));
 require_once '../vendor/autoload.php';
 
 use jf\Application;

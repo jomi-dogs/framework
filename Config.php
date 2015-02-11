@@ -8,8 +8,13 @@
 
 namespace jf;
 
-
+/**
+ * Class Config
+ * @package jf
+ */
 class Config {
+
+    private $controllerNamespace;
 
     /** @var  array */
     private $modules;
@@ -20,8 +25,8 @@ class Config {
     {
         if(!isset($config['modules']) || !isset($config['params']))
             throw new Exception("Invalid config", Core::EXCEPTION_ERROR_CODE);
-        $this->modules = $config['modules'];
-        $this->params = $config['params'];
+        foreach($config as $property => $value )
+            $this->{$property} = $value;
     }
 
     public function moduleNameValidation($name)
@@ -60,5 +65,12 @@ class Config {
             $value = $value[$key];
         }
         return $value;
+    }
+
+    public function getControllerNamespace()
+    {
+        if(!empty($this->controllerNamespace))
+            return $this->controllerNamespace;
+        return '\\app\\controllers\\';
     }
 }
