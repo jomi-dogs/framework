@@ -27,6 +27,8 @@ class Asset {
     {
         if(!empty($this->_allCssIncludes))
             return $this->_allCssIncludes;
+        if(empty($this->css) or !is_array($this->css))
+            return '';
         $result = '';
         foreach($this->css as $link) {
             $result.=$this->getCSSIncludeCode($link);
@@ -38,6 +40,8 @@ class Asset {
     {
         if(!empty($this->_allJsIncludes))
             return $this->_allJsIncludes;
+        if(empty($this->js) or !is_array($this->js))
+            return '';
         $result = '';
         foreach($this->js as $link) {
             $result.=$this->getJsIncludeCode($link);
