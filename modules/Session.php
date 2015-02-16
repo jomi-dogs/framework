@@ -14,6 +14,12 @@ use jf\Exception;
 use jf\Module;
 use jf\traits\GetterAndSetterTrait;
 
+/**
+ * Class Session
+ * @property  string $user_id
+ * @property  string $login
+ * @package jf\modules
+ */
 class Session extends Module{
 
     use GetterAndSetterTrait{
