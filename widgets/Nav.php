@@ -15,7 +15,7 @@ class Nav extends Widget
     public $view = 'nav';
 
     public function exec() {
-        if(empty($this->_config['items']) or is_array($this->_config['items']))
+        if(empty($this->_config['items']) or !is_array($this->_config['items']))
             throw new Exception("Nav items are empty",Core::EXCEPTION_ERROR_CODE);
         foreach($this->_config['items'] as &$item) {
             $item = $this->prepare($item);
