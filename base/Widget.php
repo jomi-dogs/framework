@@ -9,6 +9,7 @@
 namespace jf\base;
 
 
+use jf\Core;
 use jf\Module;
 use jf\View;
 
@@ -42,6 +43,6 @@ class Widget extends Module
      */
     public function exec()
     {
-        return View::getInstance()->render($this->path.DIRECTORY_SEPARATOR.$this->view.'.php',$this->_config);
+        return View::getInstance()->render(Core::$jfDir.'/views/'.$this->path.'/'.$this->view.'.php',$this->_config);
     }
 }
