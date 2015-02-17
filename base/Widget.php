@@ -42,6 +42,6 @@ class Widget extends Module
      */
     public function exec()
     {
-        return View::getInstance()->render($this->view.DIRECTORY_SEPARATOR.$this->path,$this->_config);
+        return View::getInstance()->render($this->path.DIRECTORY_SEPARATOR.$this->view,$this->_config);
     }
 }
