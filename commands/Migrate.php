@@ -9,7 +9,7 @@
 namespace jf\commands;
 
 
-use jf\base\BaseMigrate;
+use jf\base\Migrate as BaseMigrate;
 use jf\Core;
 use jf\Exception;
 use jf\Migration;

@@ -11,9 +11,11 @@ namespace jf\modules;
 use jf\Core;
 use jf\interfaces\IUserEntity;
 use jf\Module;
+use jf\traits\GetterAndSetterTrait;
 
 class User extends Module
 {
+    use GetterAndSetterTrait;
 
     /**
      * @return static
@@ -35,5 +37,10 @@ class User extends Module
     public function logout()
     {
         Session::destroy();
+    }
+
+    public function isGuest()
+    {
+        return empty(Core::$app->session->user_id);
     }
 }

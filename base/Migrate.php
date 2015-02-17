@@ -15,7 +15,7 @@ use jf\Exception;
 use jf\interfaces\IMigrate;
 use jf\Migration;
 
-abstract class BaseMigrate extends Controller implements IMigrate{
+abstract class Migrate extends Controller implements IMigrate{
 
     public $migrationPath;
 
