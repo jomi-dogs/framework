@@ -35,7 +35,7 @@ class User extends Module
     /**
      * @param IUserEntity $auth
      */
-    public function login(IUserEntity $auth)
+    public function signIn(IUserEntity $auth)
     {
         Core::$app->session->user_id = $auth->getId();
         Core::$app->session->login = $auth->getLogin();
@@ -51,5 +51,13 @@ class User extends Module
     public function isGuest()
     {
         return $this->_guest;
+    }
+
+    public function getLogin() {
+        try{
+            return Core::$app->session->login;
+        } catch (Exception $e) {
+            return null;
+        }
     }
 }
