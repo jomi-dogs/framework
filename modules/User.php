@@ -9,6 +9,7 @@
 namespace jf\modules;
 
 use jf\Core;
+use jf\Exception;
 use jf\interfaces\IUserEntity;
 use jf\Module;
 use jf\traits\GetterAndSetterTrait;
@@ -23,7 +24,12 @@ class User extends Module
      */
     public function init()
     {
-        // TODO: Implement init() method.
+        try{
+            $user = Core::$app->session->user_id;
+            $this->_guest = empty($user);
+        } catch (Exception $e) {
+            $this->_guest = true;
+        }
     }
 
     /**
