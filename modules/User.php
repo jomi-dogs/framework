@@ -17,6 +17,7 @@ class User extends Module
 {
     use GetterAndSetterTrait;
 
+    public $_guest = true;
     /**
      * @return static
      */
@@ -32,15 +33,17 @@ class User extends Module
     {
         Core::$app->session->user_id = $auth->getId();
         Core::$app->session->login = $auth->getLogin();
+        $this->_guest = false;
     }
 
     public function logout()
     {
         Session::destroy();
+        $this->_guest = true;
     }
 
     public function isGuest()
     {
-        return empty(Core::$app->session->user_id);
+        return $this->_guest;
     }
 }
