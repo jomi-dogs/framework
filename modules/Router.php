@@ -42,7 +42,19 @@ class Router extends Module{
 
     private function resolve()
     {
-        $uri = trim($this->uri,"/");
+        foreach($this->config['routes'] as $route => $params) {
+            $pattern = preg_replace('/('.join(')|(',$params['params']).')/','.+?',$this->uri);
+            if(!preg_match('/'.$pattern.'/',$this->uri,$matches))
+                continue;
+            unset($matches[0]);
+            foreach($matches as $key => $match) {
+                $this->{$params['matches'][$key]} = $match;
+            }
+            return true;
+        }
+        return false;
+/*
+            $uri = trim($this->uri,"/");
         $parts = explode('/',$uri);
         if(empty($parts[0])) {
             $this->controller = $this->_config['default']['controller'];
@@ -71,7 +83,7 @@ class Router extends Module{
                 $this->action.=ucfirst($actionPart);
             }
         }
-        return true;
+        return true;*/
     }
 
     public function getDefaultRoute()
