@@ -25,6 +25,13 @@ abstract class Migration {
         $this->db = Core::$app->db;
     }
 
+    /**
+     * @return mixed
+     */
     public abstract function up();
+
+    /**
+     * @return mixed
+     */
     public abstract function down();
 }

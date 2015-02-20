@@ -14,6 +14,8 @@ namespace jf;
  */
 class Config {
 
+    /** @var  array  */
+    protected $moduleNamespaces = [];
     private $controllerNamespace;
 
     /** @var  array */
@@ -73,4 +75,34 @@ class Config {
             return $this->controllerNamespace;
         return '\\app\\controllers\\';
     }
+
+    /**
+     * @param $moduleName
+     *
+     * @return string
+     */
+    public function getModuleNamespace($moduleName)
+    {
+        if(!empty($this->modules[$moduleName]['controllerNamespace']))
+            return $this->modules[$moduleName]['controllerNamespace'];
+        else return '';
+    }
+    public function getModulesControllerNamespaces()
+    {
+        if(!empty($this->moduleNamespaces))
+            return $this->moduleNamespaces;
+        $namespaces = [];
+        foreach ($this->modules as $module) {
+            if(!empty($module['controllerNamespace'])){
+                $namespaces[] = $module['controllerNamespace'];
+            }
+        }
+        return $this->moduleNamespaces = $namespaces;
+    }
+
+    public function getModules()
+    {
+        return $this->modules;
+    }
+
 }

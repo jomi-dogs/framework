@@ -7,6 +7,7 @@
  */
 
 namespace jf;
+
 use jf\controllers\ErrorController;
 use jf\interfaces\IControlStorage;
 use jf\modules\Control;
@@ -20,17 +21,18 @@ use jf\modules\User;
 /**
  * Class Application
  * @package jf
- * @property array $params
- * @property Router $router
- * @property Response $response
- * @property Request $request
- * @property Db $db
- * @property User $user
- * @property Session $session
+ * @property array           $params
+ * @property Router          $router
+ * @property Response        $response
+ * @property Request         $request
+ * @property Db              $db
+ * @property User            $user
+ * @property Session         $session
  * @property IControlStorage $controlStorage
- * @property Control  $control
+ * @property Control         $control
  */
-class Application {
+class Application
+{
 
     /** @var  array */
     public $params;
@@ -47,13 +49,13 @@ class Application {
 
     public function __get($name)
     {
-        if(!empty($this->{'_'.$name}))
-            return $this->{'_'.$name};
-        if(method_exists($this,'get'.ucfirst($name)))
-            return $this->{'_'.$name} = $this->{'get'.ucfirst($name)};
-        if(Core::moduleExists($name))
-            return $this->{'_'.$name} = Core::getModule($name);
-        throw new Exception("Can't get method:".$name, Core::EXCEPTION_ERROR_CODE);
+        if (!empty($this->{'_' . $name}))
+            return $this->{'_' . $name};
+        if (method_exists($this, 'get' . ucfirst($name)))
+            return $this->{'_' . $name} = $this->{'get' . ucfirst($name)};
+        if (Core::moduleExists($name))
+            return $this->{'_' . $name} = Core::getModule($name);
+        throw new Exception("Can't get method:" . $name, Core::EXCEPTION_ERROR_CODE);
     }
 
     protected function init(Config $config)
@@ -66,10 +68,10 @@ class Application {
     public function run()
     {
         session_start();
-        try{
+        try {
             $result = $this->handleRequest();
             $this->response->perform($result);
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             $this->performError($e);
         }
     }
@@ -95,6 +97,7 @@ class Application {
         );
     }
 
+
     protected function getControllerSuffixes()
     {
         return array(
@@ -111,13 +114,30 @@ class Application {
      */
     protected function getController($controller)
     {
-        foreach($this->getControllerNamespaces() as $namespace) {
-            foreach($this->getControllerSuffixes() as $suffix){
+        foreach ($this->getControllerNamespaces() as $namespace) {
+            foreach ($this->getControllerSuffixes() as $suffix) {
                 $name = $namespace . ucfirst($controller) . $suffix;
+                if (class_exists($name))
+                    return new $name();
+            }
+        }
+        
+        if(!empty($this->router->module)) {
+            foreach($this->getControllerSuffixes() as $suffix) {
+                $name = $this->config->getModuleNamespace($this->router->module).$controller . $suffix;
                 if(class_exists($name))
                     return new $name();
             }
         }
+
+        foreach($this->config->getModulesControllerNamespaces() as $namespace) {
+            foreach ($this->getControllerSuffixes() as $suffix) {
+                $name = $namespace . ucfirst($controller) . $suffix;
+                if (class_exists($name))
+                    return new $name();
+            }
+        }
+
         throw new Exception("Controller $controller could not be found", Core::EXCEPTION_ERROR_CODE);
     }
 

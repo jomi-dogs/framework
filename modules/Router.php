@@ -15,6 +15,10 @@ class Router extends Module{
 
     /** @var  string */
     public $uri;
+    /** @var string
+     *  TODO: get module from route
+     */
+    public $module;
     /** @var  string */
     public $controller;
     /** @var  string */
