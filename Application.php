@@ -114,18 +114,18 @@ class Application
      */
     protected function getController($controller)
     {
-        foreach ($this->getControllerNamespaces() as $namespace) {
-            foreach ($this->getControllerSuffixes() as $suffix) {
-                $name = $namespace . ucfirst($controller) . $suffix;
-                if (class_exists($name))
-                    return new $name();
-            }
-        }
-        
         if(!empty($this->router->module)) {
             foreach($this->getControllerSuffixes() as $suffix) {
                 $name = $this->config->getModuleNamespace($this->router->module).$controller . $suffix;
                 if(class_exists($name))
+                    return new $name();
+            }
+        }
+
+        foreach ($this->getControllerNamespaces() as $namespace) {
+            foreach ($this->getControllerSuffixes() as $suffix) {
+                $name = $namespace . ucfirst($controller) . $suffix;
+                if (class_exists($name))
                     return new $name();
             }
         }
