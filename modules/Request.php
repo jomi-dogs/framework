@@ -11,7 +11,7 @@ namespace jf\modules;
 
 use jf\Core;
 use jf\Exception;
-use jf\Module;
+use jf\base\Module;
 
 class Request extends Module{
 

@@ -12,7 +12,7 @@ namespace jf\modules;
 use jf\Core;
 use jf\Exception;
 use jf\helpers\DbHelper;
-use jf\Module;
+use jf\base\Module;
 
 class Db extends Module{
 

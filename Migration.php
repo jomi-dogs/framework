@@ -23,7 +23,6 @@ abstract class Migration {
     public function init()
     {
         $this->db = Core::$app->db;
-        // TODO: Implement init() method.
     }
 
     public abstract function up();

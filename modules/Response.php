@@ -8,7 +8,7 @@
 
 namespace jf\modules;
 
-use jf\Module;
+use jf\base\Module;
 use jf\View;
 
 /**

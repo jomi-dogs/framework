@@ -9,13 +9,17 @@
 namespace jf\modules;
 use jf\Core;
 use jf\Exception;
-use jf\Module;
+use jf\base\Module;
 
 class Router extends Module{
 
+    /** @var  string */
     public $uri;
+    /** @var  string */
     public $controller;
+    /** @var  string */
     public $action;
+    /** @var  string */
     public $route;
 
     /**

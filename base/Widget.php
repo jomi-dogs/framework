@@ -10,7 +10,6 @@ namespace jf\base;
 
 
 use jf\Core;
-use jf\Module;
 use jf\View;
 
 class Widget extends Module

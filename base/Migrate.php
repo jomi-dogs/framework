@@ -21,10 +21,11 @@ abstract class Migrate extends Controller implements IMigrate{
 
     protected $migrationHistory = array();
 
-    public function beforeAction()
+    public function beforeAction($action)
     {
         $this->migrationPath = Core::$appDir.'/migrations';
         $this->init();
+        parent::beforeAction($action);
     }
 
     public function actionDo($name)

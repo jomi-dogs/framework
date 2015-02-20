@@ -6,6 +6,10 @@
  * Time: 8:53 PM
  */
 namespace jf;
+
+use jf\base\Module;
+use jf\interfaces\IModule;
+
 if(!defined('APPLICATION_DIR'))
     define('APPLICATION_DIR',dirname(__DIR__));
 define('JF_DIR',__DIR__);
@@ -39,7 +43,7 @@ class Core {
     /**
      * @param string $name
      *
-     * @return Module
+     * @return IModule
      */
     public static function getModule($name)
     {

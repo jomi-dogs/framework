@@ -6,10 +6,20 @@
  * Time: 1:40 PM
  */
 
-namespace jf;
+namespace jf\base;
 
 
-abstract class Module {
+use jf\interfaces\IModule;
+use jf\traits\GetterAndSetterTrait;
+
+/**
+ * Class Module
+ * @package jf\base
+ * @property array config
+ */
+abstract class Module implements IModule
+{
+    use GetterAndSetterTrait;
 
     /** @var array  */
     protected $_config;
@@ -32,7 +42,7 @@ abstract class Module {
      *
      * @return static
      */
-    public static function getNew(array $moduleConfig)
+    public static function getNew(array $moduleConfig = array())
     {
         return new $moduleConfig['class']($moduleConfig);
     }

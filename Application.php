@@ -8,6 +8,8 @@
 
 namespace jf;
 use jf\controllers\ErrorController;
+use jf\interfaces\IControlStorage;
+use jf\modules\Control;
 use jf\modules\Db;
 use jf\modules\Request;
 use jf\modules\Response;
@@ -25,6 +27,8 @@ use jf\modules\User;
  * @property Db $db
  * @property User $user
  * @property Session $session
+ * @property IControlStorage $controlStorage
+ * @property Control  $control
  */
 class Application {
 
@@ -79,7 +83,7 @@ class Application {
     public function handleRequest()
     {
         $controller = $this->getController($this->router->controller);
-        $controller->beforeAction();
+        $controller->beforeAction($this->router->action);
         return $controller->runAction($this->router->action);
     }
 

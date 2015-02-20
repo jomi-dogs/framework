@@ -11,10 +11,10 @@ namespace jf\modules;
 use jf\Core;
 use jf\Exception;
 use jf\interfaces\IUserEntity;
-use jf\Module;
+use jf\base\Module;
 use jf\traits\GetterAndSetterTrait;
 
-class User extends Module
+class User extends Module implements IUserEntity
 {
     use GetterAndSetterTrait;
 
@@ -56,6 +56,15 @@ class User extends Module
     public function getLogin() {
         try{
             return Core::$app->session->login;
+        } catch (Exception $e) {
+            return null;
+        }
+    }
+
+    public function getId()
+    {
+        try{
+            return Core::$app->session->user_id;
         } catch (Exception $e) {
             return null;
         }
