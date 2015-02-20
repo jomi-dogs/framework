@@ -10,6 +10,7 @@ namespace jf\modules;
 use jf\Core;
 use jf\Exception;
 use jf\base\Module;
+use jf\helpers\UriHelper;
 
 class Router extends Module{
 
@@ -49,7 +50,7 @@ class Router extends Module{
                 continue;
             unset($matches[0]);
             foreach($matches as $key => $match) {
-                $this->{$params['matches'][$key]} = $match;
+                $this->{$params['matches'][$key]} = UriHelper::getClassNameFromUri($match);
             }
             if(empty($this->controller)){
                 $this->controller = '$default';
