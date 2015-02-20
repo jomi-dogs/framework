@@ -50,6 +50,21 @@ class Router extends Module{
             foreach($matches as $key => $match) {
                 $this->{$params['matches'][$key]} = $match;
             }
+            if(empty($this->controller)){
+                $this->controller = '$default';
+                if(!empty($params['default']['controller']))
+                    $this->controller = $params['default']['controller'];
+            }
+            if(empty($this->action)){
+                $this->action = '$default';
+                if(!empty($params['default']['action']))
+                    $this->action = $params['default']['action'];
+            }
+            if(empty($this->module)){
+                $this->module = '';
+                if(!empty($params['default']['module']))
+                    $this->module = $params['default']['module'];
+            }
             return true;
         }
         return false;
