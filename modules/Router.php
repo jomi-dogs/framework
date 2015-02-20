@@ -42,9 +42,10 @@ class Router extends Module{
 
     private function resolve()
     {
+        $tokens = explode('?',$this->uri);
+        $uri = $tokens[0];
         foreach($this->config['routes'] as $route => $params) {
-            $pattern = preg_replace('/('.join(')|(',$params['params']).')/','.+?',$this->uri);
-            if(!preg_match('/'.$pattern.'/',$this->uri,$matches))
+            if(!preg_match($route,$uri,$matches))
                 continue;
             unset($matches[0]);
             foreach($matches as $key => $match) {
