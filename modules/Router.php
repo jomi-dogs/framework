@@ -50,7 +50,7 @@ class Router extends Module{
                 continue;
             unset($matches[0]);
             foreach($matches as $key => $match) {
-                $this->{$params['matches'][$key]} = UriHelper::getClassNameFromUri($match);
+                $this->{$params['matches'][$key]} = UriHelper::hyphenToCamel($match);
             }
             if(empty($this->controller)){
                 $this->controller = '$default';

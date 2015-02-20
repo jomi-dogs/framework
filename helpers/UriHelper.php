@@ -20,4 +20,15 @@ abstract class UriHelper {
         }
         return $name;
     }
+
+    public static function hyphenToCamel($hyphenedStr)
+    {
+        $tokens = explode('-',$hyphenedStr);
+        $camel = $tokens[0];
+        $count = count($tokens);
+        for($i = 1;$i<$count;$i++){
+            $camel.=ucfirst($tokens[$i]);
+        }
+        return $camel;
+    }
 }

@@ -114,6 +114,7 @@ class Application
      */
     protected function getController($controller)
     {
+        $controller = ucfirst($controller);
         if(!empty($this->router->module)) {
             foreach($this->getControllerSuffixes() as $suffix) {
                 $name = $this->config->getModuleNamespace($this->router->module).$controller . $suffix;

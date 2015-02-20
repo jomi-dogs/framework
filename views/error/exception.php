@@ -15,7 +15,7 @@
 </div>
 <div>
     <?php
-    $backtrace = debug_backtrace();
+    $backtrace = $e->getTrace();
     var_dump($backtrace);
     ?>
 </div>
