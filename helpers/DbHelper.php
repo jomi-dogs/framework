@@ -38,6 +38,13 @@ abstract class DbHelper {
     {
         if(is_string($conditions))
             return ' WHERE '. $conditions;
+        if(is_array($conditions)){
+            $tokens = [];
+            foreach($conditions as $key => $value) {
+                $tokens[] = $key.'='.Core::$app->db->quote($value);
+            }
+            return ' WHERE ' . join(', ',$tokens);
+        }
         throw new Exception("Other functionality is not developed yet", 500);
     }
 

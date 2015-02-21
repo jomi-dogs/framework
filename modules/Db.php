@@ -109,5 +109,10 @@ class Db extends Module{
         return $this->pdo->commit();
     }
 
+    public function quote($value)
+    {
+        return $this->pdo->quote($value);
+    }
+
 
 }
