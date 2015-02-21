@@ -47,10 +47,13 @@ class ConfigControlStorage extends Module implements IControlStorage
      */
     public function checkPermission(IUserEntity $entity, $permission)
     {
-        if(isset($this->permissions[$entity->getId()][$permission]))
-            return $this->permissions[$entity->getId()][$permission];
-        if(isset($this->permissions[$entity->getLogin()][$permission]))
-            $this->permissions[$entity->getLogin()][$permission];
+        $path = Core::$app->router->module.'\\'.Core::$app->router->controller;
+        if(isset($this->permissions[$path][$entity->getId()][$permission]))
+            return $this->permissions[$path][$entity->getId()][$permission];
+        if(isset($this->permissions[$path][$entity->getLogin()][$permission]))
+            return $this->permissions[$path][$entity->getLogin()][$permission];
+        if(isset($this->permissions[$path]['*'][$permission]))
+            return $this->permissions[$path]['*'][$permission];
         if(isset($this->permissions['default'][$permission]))
             return $this->permissions['default'][$permission];
         throw new Exception("The $permission permission is not set", Core::EXCEPTION_ERROR_CODE);
