@@ -11,8 +11,14 @@ namespace jf;
 
 class Asset {
 
-    public $css;
-    public $js;
+    public $css = [];
+    public $js = [];
+
+    /**
+     * @var array $depend
+     * It is the array, that shows which classes this asset is dependent on
+     */
+    public $depend = [];
     protected $_allCssIncludes;
     protected $_allJsIncludes;
 

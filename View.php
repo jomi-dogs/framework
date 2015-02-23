@@ -102,8 +102,12 @@ class View {
             throw new Exception("Asset $assetName does not exist", Core::EXCEPTION_ERROR_CODE);
         if(array_key_exists($assetName,$this->_assets))
             return true;
-        else
-            $this->_assets[$assetName] = new $assetName();
+        $this->_assets[$assetName] = new $assetName();
+        if(!is_array($this->_assets[$assetName]->depend))
+            return true;
+        foreach($this->_assets[$assetName]->depend as $dependency) {
+            $this->registerAsset($dependency);
+        }
         return true;
     }
 }
